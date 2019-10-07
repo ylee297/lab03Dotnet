@@ -39,7 +39,7 @@ namespace lab03
                     options.UseSqlServer(
                         Configuration.GetConnectionString("DefaultConnection")));
             }
-//            services.BuildServiceProvider().GetService<MyDatabaseContext>().Database.Migrate();
+            services.BuildServiceProvider().GetService<ApplicationDbContext>().Database.Migrate();
 
 
             services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
