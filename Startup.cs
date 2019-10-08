@@ -39,6 +39,7 @@ namespace lab03
                     options.UseSqlServer(
                         Configuration.GetConnectionString("DefaultConnection")));
             }
+            
             services.BuildServiceProvider().GetService<ApplicationDbContext>().Database.Migrate();
 
 
@@ -77,6 +78,8 @@ namespace lab03
                     pattern: "{controller=Home}/{action=Index}/{id?}");
                 endpoints.MapRazorPages();
             });
+            
+            
         }
     }
 }
